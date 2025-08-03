@@ -1,0 +1,26 @@
+{
+  "name": "nova-utils-typescript",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TypeScript packages for Nova402 x402 protocol",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsup": "^8.3.0",
+    "turbo": "^2.3.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  },
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ]
+}
+
