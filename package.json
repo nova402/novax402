@@ -1,0 +1,58 @@
+{
+  "name": "nova-utils",
+  "version": "1.0.0",
+  "description": "Multi-chain x402 payment infrastructure utilities and SDKs for Nova402",
+  "private": true,
+  "workspaces": [
+    "typescript/packages/*",
+    "typescript/examples/*",
+    "examples/typescript/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.0",
+    "@types/node": "^22.10.0",
+    "prettier": "^3.3.0",
+    "turbo": "^2.3.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "keywords": [
+    "x402",
+    "http-402",
+    "payments",
+    "blockchain",
+    "web3",
+    "nova402",
+    "base",
+    "solana",
+    "micropayments",
+    "api-economy"
+  ],
+  "author": "Nova402 Team <dev@nova402.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nova402/nova-utils.git"
+  },
+  "homepage": "https://nova402.com",
+  "bugs": {
+    "url": "https://github.com/nova402/nova-utils/issues"
+  }
+}
+
