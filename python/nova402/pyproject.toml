@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nova402"
+version = "1.0.0"
+description = "Python SDK for Nova402 x402 payment protocol"
+readme = "README.md"
+authors = [{name = "Nova402 Team", email = "dev@nova402.com"}]
+license = {text = "Apache-2.0"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+keywords = ["x402", "http-402", "payments", "blockchain", "nova402", "base", "solana"]
+requires-python = ">=3.8"
+dependencies = [
+    "web3>=6.11.0",
+    "eth-account>=0.10.0",
+    "eth-utils>=2.3.0",
+    "eth-abi>=4.2.0",
+    "cryptography>=41.0.0",
+    "requests>=2.31.0",
+    "pydantic>=2.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.0.0",
+    "mypy>=1.7.0",
+    "ruff>=0.1.0",
+]
+server = [
+    "fastapi>=0.104.0",
+    "flask>=3.0.0",
+    "uvicorn>=0.24.0",
+]
+
+[project.urls]
+Homepage = "https://nova402.com"
+Documentation = "https://docs.nova402.com"
+Repository = "https://github.com/nova402/nova-utils"
+Issues = "https://github.com/nova402/nova-utils/issues"
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+select = ["E", "F", "I", "N", "W"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --cov=nova402 --cov-report=term-missing"
+testpaths = ["tests"]
+
